@@ -24,7 +24,7 @@ int main()
     cout << first->x << " , " << first->y << endl;
 
 //--------------------------------------------------------------------------------------------------------------------------
-// 2. ) an array of objects , memory is allocated in static way ?? But i thought arrays are always like ponters!! 
+// 2. ) an array of objects , memory is allocated in static way !! 
     My_class second[10];
     second[0].x = 5;     //second->x = 5;
     second[0].y = 10;    //second->y = 10;
@@ -33,20 +33,21 @@ int main()
     cout << second[0].x << " , " << second[0].y << endl;
 
 //--------------------------------------------------------------------------------------------------------------------------
-// 3.) Array of objects memory allocated dynamically ?? Whats the differenc in the first case and second case ??
+// 3.) Array of objects memory allocated dynamically!!
 
     My_class *obj = new My_class[10];
 
     (obj)->x = 4;
     (obj)->y = 10;
+    
 //       OR
     obj[1].x = 10;
     obj[1].y = 11;
-  
+
+//       OR
+    (*obj).x = 10;
 
     cout << obj[1].x << " , " << (obj+1)->y;
-
-    // the main query here is how does array get memory if array name is just a pointer , what is array[0] or array[1] a pointer or object??
 
     return 0;
 }
